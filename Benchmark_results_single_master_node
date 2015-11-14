@@ -1,0 +1,111 @@
+C:\Users\ARUN>C:\Users\ARUN\Downloads\httpd-2.4.17-x86\Apache24\bin\ab.exe -r -
+ 100000 -c 1000 http://localhost:8001/
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 10000 requests
+Completed 20000 requests
+Completed 30000 requests
+Completed 40000 requests
+Completed 50000 requests
+Completed 60000 requests
+Completed 70000 requests
+Completed 80000 requests
+Completed 90000 requests
+Completed 100000 requests
+Finished 100000 requests
+
+
+Server Software:
+Server Hostname:        localhost
+Server Port:            8001
+
+Document Path:          /
+Document Length:        32 bytes
+
+Concurrency Level:      1000
+Time taken for tests:   68.152 seconds
+Complete requests:      100000
+Failed requests:        0
+Total transferred:      22700000 bytes
+HTML transferred:       3200000 bytes
+Requests per second:    1467.30 [#/sec] (mean)
+Time per request:       681.524 [ms] (mean)
+Time per request:       0.682 [ms] (mean, across all concurrent requests)
+Transfer rate:          325.27 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1  14.7      0     507
+Processing:    49  674 213.0    743    1714
+Waiting:       38  508 257.7    652    1199
+Total:         50  675 212.9    743    1714
+
+Percentage of the requests served within a certain time (ms)
+  50%    743
+  66%    748
+  75%    751
+  80%    754
+  90%    764
+  95%    779
+  98%   1232
+  99%   1246
+ 100%   1714 (longest request)
+
+ C:\Users\ARUN>C:\Users\ARUN\Downloads\httpd-2.4.17-x86\Apache24\bin\ab.exe -r -n
+  100000 -c 20000 http://localhost:8001/
+ This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+ Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+ Licensed to The Apache Software Foundation, http://www.apache.org/
+
+ Benchmarking localhost (be patient)
+ Completed 10000 requests
+ Completed 20000 requests
+ Completed 30000 requests
+ Completed 40000 requests
+ Completed 50000 requests
+ Completed 60000 requests
+ Completed 70000 requests
+ Completed 80000 requests
+ Completed 90000 requests
+ Completed 100000 requests
+ Finished 100000 requests
+
+
+ Server Software:
+ Server Hostname:        localhost
+ Server Port:            8001
+
+ Document Path:          /
+ Document Length:        32 bytes
+
+ Concurrency Level:      20000
+ Time taken for tests:   79.184 seconds
+ Complete requests:      100000
+ Failed requests:        0
+ Total transferred:      22700000 bytes
+ HTML transferred:       3200000 bytes
+ Requests per second:    1262.88 [#/sec] (mean)
+ Time per request:       15836.822 [ms] (mean)
+ Time per request:       0.792 [ms] (mean, across all concurrent requests)
+ Transfer rate:          279.95 [Kbytes/sec] received
+
+ Connection Times (ms)
+               min  mean[+/-sd] median   max
+ Connect:        0    0   8.7      0     506
+ Processing:  6018 13724 2917.2  13439   22945
+ Waiting:     1785 7653 3971.9   7261   20974
+ Total:       6019 13725 2917.4  13440   22946
+
+ Percentage of the requests served within a certain time (ms)
+   50%  13440
+   66%  13706
+   75%  13855
+   80%  13920
+   90%  17622
+   95%  20170
+   98%  21869
+   99%  22458
+  100%  22946 (longest request)

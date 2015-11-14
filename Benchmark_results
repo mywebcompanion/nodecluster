@@ -1,0 +1,123 @@
+
+
+Read this article to see how fast node is compared to apache server : http://zgadzaj.com/benchmarking-nodejs-basic-performance-tests-against-apache-php
+
+
+
+Request 1 : 100K requests with 1000 concurrent requests
+
+C:\Users\ARUN>C:\Users\ARUN\Downloads\httpd-2.4.17-x86\Apache24\bin\ab.exe -r -n
+ 100000 -c 1000 http://localhost:8000/
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 10000 requests
+Completed 20000 requests
+Completed 30000 requests
+Completed 40000 requests
+Completed 50000 requests
+Completed 60000 requests
+Completed 70000 requests
+Completed 80000 requests
+Completed 90000 requests
+Completed 100000 requests
+Finished 100000 requests
+
+
+Server Software:
+Server Hostname:        localhost
+Server Port:            8000
+
+Document Path:          /
+Document Length:        24 bytes
+
+Concurrency Level:      1000
+Time taken for tests:   33.821 seconds
+Complete requests:      100000
+Failed requests:        25120
+   (Connect: 0, Receive: 0, Length: 25120, Exceptions: 0)
+Total transferred:      21874880 bytes
+HTML transferred:       2374880 bytes
+Requests per second:    2956.73 [#/sec] (mean)
+Time per request:       338.212 [ms] (mean)
+Time per request:       0.338 [ms] (mean, across all concurrent requests)
+Transfer rate:          631.62 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   2.3      0     501
+Processing:    33  332  74.3    325    1351
+Waiting:       19  196 112.1    194    1337
+Total:         33  332  74.4    326    1351
+
+Percentage of the requests served within a certain time (ms)
+  50%    326
+  66%    329
+  75%    332
+  80%    334
+  90%    339
+  95%    345
+  98%    376
+  99%    389
+ 100%   1351 (longest request)
+
+Request 2 : 100K requests with 20000 concurrent requests
+
+C:\Users\ARUN>C:\Users\ARUN\Downloads\httpd-2.4.17-x86\Apache24\bin\ab.exe -r -n
+ 100000 -c 20000 http://localhost:8000/
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 10000 requests
+Completed 20000 requests
+Completed 30000 requests
+Completed 40000 requests
+Completed 50000 requests
+Completed 60000 requests
+Completed 70000 requests
+Completed 80000 requests
+Completed 90000 requests
+Completed 100000 requests
+Finished 100000 requests
+
+
+Server Software:
+Server Hostname:        localhost
+Server Port:            8000
+
+Document Path:          /
+Document Length:        24 bytes
+
+Concurrency Level:      20000
+Time taken for tests:   63.583 seconds
+Complete requests:      100000
+Failed requests:        30968
+   (Connect: 0, Receive: 0, Length: 30968, Exceptions: 0)
+Total transferred:      21869032 bytes
+HTML transferred:       2369032 bytes
+Requests per second:    1572.75 [#/sec] (mean)
+Time per request:       12716.543 [ms] (mean)
+Time per request:       0.636 [ms] (mean, across all concurrent requests)
+Transfer rate:          335.88 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.4      0       3
+Processing:  5516 11989 1855.8  12836   13551
+Waiting:     1802 6190 2674.6   5972   11678
+Total:       5517 11989 1855.8  12836   13552
+
+Percentage of the requests served within a certain time (ms)
+  50%  12836
+  66%  13199
+  75%  13295
+  80%  13316
+  90%  13439
+  95%  13506
+  98%  13531
+  99%  13540
+ 100%  13552 (longest request)
